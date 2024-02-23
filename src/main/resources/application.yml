@@ -1,0 +1,17 @@
+
+server:
+  port: '8081'
+  
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/spring-jpa
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+    
+    #https://github.com/shabbirdwd53/Spring-Data-JPA-Tutorial/blob/main/src/test/java/com/dailycodebuffer/spring/data/jpa/tutorial/repository/CourseMaterialRepositoryTest.java#L3
