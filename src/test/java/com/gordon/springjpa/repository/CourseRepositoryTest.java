@@ -8,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+
 import com.gordon.springjpa.entity.Course;
+import com.gordon.springjpa.entity.Student;
 import com.gordon.springjpa.entity.Teacher;
 
 @SpringBootTest
@@ -117,6 +119,32 @@ class CourseRepositoryTest {
                         firstPageTenRecords).getContent();
 
         System.out.println("courses = " + courses);
+    }
+    
+    @Test
+    public void saveCourseWithStudentAndTeacher() {
+
+        Teacher teacher = Teacher.builder()
+                .firstName("Lizze")
+                .lastName("Morgan")
+                .build();
+
+        Student student = Student.builder()
+                .firstName("gordon")
+                .lastName("Singh")
+                .emailId("otienog@test.com.com")
+                .build();
+
+        Course course = Course
+                .builder()
+                .title("AI")
+                .credit(12)
+                .teacher(teacher)
+                .build();
+
+        course.addStudents(student);
+
+        courseRepository.save(course);
     }
 
 }

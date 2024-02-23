@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.gordon.springjpa.entity.Course;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
-	Page<Course> findByTitleContaining(
-            String title,
-            Pageable pageable);
+//	Page<Course> findByTitleContaining(
+//            String title,
+//            Pageable pageable);
 }
